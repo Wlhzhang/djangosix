@@ -1,0 +1,59 @@
+
+body{
+   background-color: #ff9900;
+}
+.main_div{
+    display: inline-block;
+}
+.img_div_one{
+    position: fixed;
+    left: calc(50% - 80px);
+    top: calc(50% - 250px);
+}
+.img_div_two{
+    position:fixed ;
+    left: calc(50% - 270px);
+    top: calc(50% - 170px);
+    background: url("/static/img/login-background.png");
+    width: 648px;
+    height: 315px;
+}
+input {
+    left: 290px;
+    top: 45px;
+    position: relative;
+    display: block;
+    width: 280px;
+    height: 35px;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-size: 16px;
+    border: 1px solid #f4e579;
+}
+.img_div_two img{
+    left: 290px;
+    top: 45px;
+    position: relative;
+    display: block;
+    width: 280px ;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.button_one{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff3f3;
+}
+span{
+    display: flex;
+    margin-left: 5px;
+}
+p{
+    display: flex;
+    margin-left: 300px;
+    margin-top: 77px;
+    font-size: 22px;
+}
+

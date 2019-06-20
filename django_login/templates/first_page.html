@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    {% include 'common/public_js_css.html' %}
+</head>
+<body>
+<h1>欢迎你的到来</h1>
+<input type="button" value="登录" id="but_one">
+<input type="button" value="注册" id="but_two">
+</body>
+<script>
+    $('#but_one').mousedown(function () {
+        window.location.href='/login/'
+    });
+   $('#but_two').mousedown(function () {
+    window.location.href='/polls/register/'
+    })
+</script>
+
+</html>

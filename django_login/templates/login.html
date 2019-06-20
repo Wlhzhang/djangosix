@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    {% include 'common/public_js_css.html' %}
+</head>
+<body>
+<div class="main_div">
+    <div class="img_div_one"><img src="/static/img/logo-title.png"></div>
+    <div class="img_div_two">
+        <form action="" method="post" enctype="application/x-www-form-urlencoded" id="login_form">
+           {% csrf_token %}
+            <span id="my_error"></span>
+            <input type="text" name="username">
+            <input type="password" name="password" >
+            <span>
+                <input type="text" name="cache_code" placeholder="输入验证码"  style="width: 150px">
+                <img src="/polls/get_code/" id="code_img" style="width: 180px;height:40px ">
+            </span>
+            <span>
+                <input type="button" class="button_one" value="登&nbsp;录">
+                <input type="checkbox" style="width: 20px;height: 20px;margin-left: 70px;margin-top: 40px"><p>记住密码</p>
+            </span>
+        </form>
+    </div>
+</div>
+<script>
+    var cache=window.document.getElementById('code_img');
+    cache.onclick=function() {
+        this.src = "/polls/get_code/?rnd=" + Math.random();
+    };
+    {#$('.button_one').click(function () {#}
+    {#        $.ajax({#}
+    {#            url: '/polls/login/',#}
+    {#            type: 'post',#}
+    {#            data: new FormData($('#login_form')[0]),#}
+    {#            cache: false,#}
+    {#            processData: false,#}
+    {#            contentType: false,#}
+    {#            success: function (data) {#}
+    {#                if(data.status=='fail'){#}
+    {#                    $('#my_error').text(data.msg)#}
+    {#                }else if(data.status=='form_error'){#}
+    {#                    $('#my_error').text(data.msg)#}
+    {#                }#}
+    {#                else if(data.status=='success'){#}
+    {#                    window.location.href='/home/';#}
+    {#                }#}
+    {#            }#}
+    {#        })#}
+    {#    });#}
+
+</script>
+</body>
+</html>
