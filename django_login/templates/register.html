@@ -23,7 +23,7 @@
         $.ajax({
             url: '/polls/register/',
             type: 'post',
-            data: new FormData('#register_form')[0],
+            data: new FormData($('#register_form')[0]),
             cache: false,
             processData: false,
             contentType: false,

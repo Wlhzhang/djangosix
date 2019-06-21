@@ -13,7 +13,6 @@ class MyAuthMiddleware(MiddlewareMixin):
 
     # 响应数据
     def process_response(self,request,response):
-        print('response')
         return response
 
     # 异常处理

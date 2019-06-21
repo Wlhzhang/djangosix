@@ -10,7 +10,7 @@ from django.views import View
 
 from django_login import settings
 from polls.cache_img import get_cache_code_info
-from polls.forms import UserForm
+from polls.forms import UserForm, RegForm
 from polls.models import MyUser
 
 
@@ -33,20 +33,20 @@ class Register(View):
         return render(request,'register.html')
     def post(self,request,*args,**kwargs):
         # 必须把request.files传递到form的构造函数中
-        form = UserForm(request.POST,request.FILES)
-        password1 = form.cleaned_data['userPassword1']
-        password2 = form.cleaned_data['userPassword2']
-        if password1==password2:
-            if form.is_valid():
+        form = RegForm(request.POST,request.FILES)
+        if form.is_valid():
+            password1 = form.cleaned_data['userPassword1']
+            password2 = form.cleaned_data['userPassword2']
+            if password1==password2:
                 form_file = User(
                                 headimage=form.cleaned_data['my_file'],username=form.cleaned_data['userName'],
-                                 password=password1,userEmail=form.cleaned_data['userEmail'])
+                                password=password1,userEmail=form.cleaned_data['userEmail'])
                 form_file.save()
                 return render(request,'login.html')
             else:
-                return JsonResponse({'status':'fail','msg':form.errors().as_json()})
+                return JsonResponse({'status':'fail_one','msg':'密码输入不一致'})
         else:
-            return JsonResponse({'status':'fail_one','msg':'密码输入不一致'})
+            return JsonResponse({'status': 'fail', 'msg': form.errors.as_json()})
 
 def login(request):
     forms = UserForm(request.POST)
