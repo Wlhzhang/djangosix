@@ -7,7 +7,7 @@
     {% include 'common/public_js_css.html' %}
 </head>
 <body>
-<form action="/polls/register/" enctype="multipart/form-data" method="post" id="register_form">
+<form action="" enctype="multipart/form-data" method="post" id="register_form">
     {% csrf_token %}
     <div class="tel">
         <input type="text" name="userName" placeholder="用户名"><span>由5-8个字符组成！</span>
