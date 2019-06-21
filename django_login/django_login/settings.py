@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'common.public_middleware.MyAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'django_login.urls'
@@ -130,7 +131,7 @@ STATICFILES_DIRS =[
     os.path.join(BASE_DIR,'static')
 ]
 
-# AUTH_USER_MODEL = 'polls.MyUser'
+AUTH_USER_MODEL = 'polls.MyUser'
 
 # 文件上传所需要的配置
 MEDIA_URL='/media/'

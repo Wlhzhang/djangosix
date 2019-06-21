@@ -11,10 +11,11 @@ from django.views import View
 from django_login import settings
 from polls.cache_img import get_cache_code_info
 from polls.forms import UserForm
+from polls.models import MyUser
 
 
-def register(request):
-    return render(request,'register.html')
+# def get_register(request):
+#     return render(request,'register.html')
 
 # 验证码
 def get_code(request):
@@ -45,8 +46,7 @@ class Register(View):
             else:
                 return JsonResponse({'status':'fail','msg':form.errors().as_json()})
         else:
-            return JsonResponse({'status':'fail','msg':'密码输入不一致'})
-
+            return JsonResponse({'status':'fail_one','msg':'密码输入不一致'})
 
 def login(request):
     forms = UserForm(request.POST)
@@ -54,6 +54,7 @@ def login(request):
     if code == request.session['code']:
         if forms.is_valid():
             user = auth.authenticate(username=forms.cleaned_data['username'],password=forms.cleaned_data['password'])
+            # user = MyUser.objects.filter(username=forms.cleaned_data['username'],password=forms.cleaned_data['password'])
             if user:
                 auth.login(request,user)
                 return JsonResponse({'msg':'登录成功','status':'success'})

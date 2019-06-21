@@ -46,7 +46,7 @@ def get_cache_code_info():
     draw = ImageDraw.Draw(image)
 
     # 获取一个font字体对象参数是ttf的字体文件的目录，以及字体的大小
-    font = ImageFont.truetype(os.path.join(os.path.join(BASE_DIR, 'system_mgr'),'cerepf.ttf'),size=30)
+    font = ImageFont.truetype(os.path.join(os.path.join(BASE_DIR, 'polls'),'cerepf.ttf'),size=30)
 
     # 在图片上写东西,参数是：定位，字符串，颜色，字体
     draw.text((20, 0), resule, (0,0,0),font=font)

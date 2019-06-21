@@ -12,7 +12,7 @@
     <div class="img_div_two">
         <form action="" method="post" enctype="application/x-www-form-urlencoded" id="login_form">
            {% csrf_token %}
-            <span id="my_error"></span>
+            <span id="my_error" style="margin-left: 50px;color: red"></span>
             <input type="text" name="username">
             <input type="password" name="password" >
             <span>
@@ -31,26 +31,26 @@
     cache.onclick=function() {
         this.src = "/polls/get_code/?rnd=" + Math.random();
     };
-    {#$('.button_one').click(function () {#}
-    {#        $.ajax({#}
-    {#            url: '/polls/login/',#}
-    {#            type: 'post',#}
-    {#            data: new FormData($('#login_form')[0]),#}
-    {#            cache: false,#}
-    {#            processData: false,#}
-    {#            contentType: false,#}
-    {#            success: function (data) {#}
-    {#                if(data.status=='fail'){#}
-    {#                    $('#my_error').text(data.msg)#}
-    {#                }else if(data.status=='form_error'){#}
-    {#                    $('#my_error').text(data.msg)#}
-    {#                }#}
-    {#                else if(data.status=='success'){#}
-    {#                    window.location.href='/home/';#}
-    {#                }#}
-    {#            }#}
-    {#        })#}
-    {#    });#}
+    $('.button_one').click(function () {
+            $.ajax({
+                url: '/polls/login/',
+                type: 'post',
+                data: new FormData($('#login_form')[0]),
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    if(data.status=='fail'){
+                        $('#my_error').text(data.msg)
+                    }else if(data.status=='form_error'){
+                        $('#my_error').text(data.msg)
+                    }
+                    else if(data.status=='success'){
+                        window.location.href='/register/';
+                    }
+                }
+            })
+        });
 
 </script>
 </body>
