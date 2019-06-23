@@ -9,7 +9,7 @@ class MyAuthMiddleware(MiddlewareMixin):
         if (request.path in no_auth_path)==False:
             if (request.user.is_authenticated and request.user.is_active and request.user.is_staff)==False:
                 print('未登录')
-                return redirect('/')
+                return redirect('/login/')
 
     # 响应数据
     def process_response(self,request,response):

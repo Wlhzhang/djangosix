@@ -6,3 +6,6 @@ def first(request):
 
 def login(request):
     return render(request,'login.html')
+
+def get_home(request):
+    return render(request,'home.html')

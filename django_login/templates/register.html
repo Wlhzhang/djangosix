@@ -7,14 +7,14 @@
     {% include 'common/public_js_css.html' %}
 </head>
 <body>
-<form action="" enctype="multipart/form-data" method="post" id="register_form">
+<form action="/polls/register/" enctype="multipart/form-data" method="post" id="register_form">
     {% csrf_token %}
     <div class="tel">
-        <input type="text" name="userName" placeholder="用户名"><span>由5-8个字符组成！</span>
+        <input type="text" name="username" placeholder="用户名"><span>由5-8个字符组成！</span>
         <input type="tel" name="userEmail" placeholder="邮箱"><span>请按邮箱格式输入</span>
         <input type="password" name="userPassword1" placeholder="密码"><span>使用字母、数字、符号两种及以上的组合，8-12个字符</span>
         <input type="password" name="userPassword2" placeholder="再次输入密码"><span id="error_one"></span>
-        <p style="margin-left: 20px">选择头像<input type="file" name="my_file" id="my_file" style="width: 180px"></p>
+        <p style="margin-left: 20px">选择头像<input type="file" name="headimage" id="my_file" style="width: 180px"></p>
         <input type="button" value="注册" id="but_reg">
     </div>
 </form>

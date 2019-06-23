@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock title %}</title>
+    {% include 'common/public_js_css.html' %}
+    <style>
+        .head{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height:80px;
+            /*background: url("./img/top-background.jpg");*/
+        }
+        .head img{
+            width: 100%;
+            height: 80px;
+        }
+        .head p{
+            position: fixed;
+            top: 0;
+            left: 60px;
+            font-size: 20px;
+            color: white;
+        }
+        .head input{
+            color: white;
+            background-color: rgba(39,60,125,0);
+            border: none;
+        }
+        .headRightDate{
+            display: inline-block;
+            position: fixed;
+            right: 300px;
+            top: 30px;
+            font-size: 20px;
+            color: white;
+        }
+        .headRight{
+            display: inline-block;
+            position: fixed;
+            right: 20px;
+            top: 10px;
+        }
+        .leftNav{
+           position: fixed;
+            top: 80px;
+            left: 0;
+            background-color: #fef3e1;
+            width: 220px;
+            bottom: 0;
+            right: 0;
+        }
+        .leftNav > ul > li > ul{
+            display: none;
+        }
+        .leftNav ul{
+            list-style: none;
+        }
+        .leftNav a{
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 25px;
+            color: black;
+        }
+        .leftNav > ul > li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+ /*border-bottom:1px solid #ff9900;*/
+        }
+        .leftNav  ul  a :hover{
+            background-color: #f4e579;
+            color: white;
+        }
+        .homePage{
+            position: fixed;
+            display: inline-block;
+            left: 220px;
+            top: 80px;
+            right: 0;
+            bottom: 0;
+        }
+        .homePage p{
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <img src="/static/img/top-background.jpg">
+    <p>电&nbsp;&nbsp;力&nbsp;&nbsp;巡&nbsp;&nbsp;检&nbsp;&nbsp;系&nbsp;&nbsp;统</p>
+    <div class="headRightDate">
+        <span>2019年5月21日 星期二</span>
+    </div>
+    <div class="headRight">
+        <span>欢迎admin | 角色：系统管理员|<input type="button" value="退出"></span>
+    </div>
+</div>
+<div class="leftNav">
+     <ul>
+         <li>
+             <div class="main-content">
+                <span>首页</span>
+             </div>
+         </li>
+        <li>
+            <a href="#" id="one_a"><i class="fa fa-book" aria-hidden="true" ></i>&nbsp;我的工作平台</a>
+            <ul id="ul_one">
+                <li><a>代办列表</a></li>
+                <li><a>个人资料修改</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" id="two_a"><i class="fa fa-diamond" aria-hidden="true"></i>&nbsp;系统管理</a>
+            <ul id="ul_two">
+                <li><a>角色管理</a></li>
+                <li><a>用户管理</a></li>
+                <li><a>菜单管理</a></li>
+                <li><a>角色权限管理</a></li>
+                <li><a>系统管理</a></li>
+            </ul>
+        </li>
+         <li>
+            <a href="#" id="three_a"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;塔杆管理</a>
+            <ul id="ul_three">
+                <li><a>塔杆管理</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#" id="four_a"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;线路管理</a>
+            <ul id="ul_four">
+                <li><a>线路管理</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#" id="five_a"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;缺陷管理</a>
+            <ul id="ul_five">
+                <li><a>缺陷等级设置</a></li>
+                <li><a>缺陷等级确认</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#" id="six_a"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;巡检任务管理</a>
+            <ul id="ul_six">
+                <li><a>巡检任务制定与分配</a></li>
+                <li><a>巡检任务执行与回执</a></li>
+                <li><a>缺陷查询</a></li>
+            </ul>
+         </li>
+         <li>
+            <a href="#" id="seven_a"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;消缺任务管理</a>
+            <ul>
+                <li><a href="#" id="work_dis">消缺任务制定与分配</a></li>
+                <li><a href="#" >消缺任务执行与回执</a></li>
+                <li><a href="#">消缺查询</a></li>
+            </ul>
+         </li>
+         <li>
+             <a href="#" id="eight_a"><i class="fa fa-calendar" aria-hidden="true" ></i>&nbsp;信息统计</a>
+              <ul id="ul_eight">
+                <li><a>巡查记录统计</a></li>
+                <li><a>消缺激励统计</a></li>
+              </ul>
+         </li>
+    </ul>
+</div>
+
+<div class="homePage">
+    <p>欢电力迎登陆巡检系统!</p>
+    {#<iframe id="myrame" src="/xiaoque/addxiaoque/" height="100%" width="100%"></iframe>#}
+    <iframe id="myrame" src="" height="100%" width="100%" frameborder="0"></iframe>
+
+</div>
+<script>
+  $(function () {
+        $('.leftNav>ul>li').on('click',(e)=>{
+            e = e || event;
+            if(e.target.nodeName === 'A'){
+               $(`#` + e.target.attributes[1].value).next('ul').toggle()
+            }
+
+        })
+
+
+        $('#work_dis').click(function () {
+           document.querySelector('#myrame').setAttribute('src','http://127.0.0.1:8000/xiaoque/get_xiaoque/')
+            $('.homePage > p').remove()
+            return false;
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

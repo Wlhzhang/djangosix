@@ -6,7 +6,7 @@ class MyUserManager(BaseUserManager):
     def create_user(self, username,  password=None):
         # 验证是否有用户名
         if not username:
-            raise ValueError('Users must have an username')
+            raise username
 
         user = self.model(
             username=username

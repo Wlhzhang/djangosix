@@ -19,18 +19,23 @@ class UserForm(forms.Form):
             return self.cleaned_data["username"]
 
 
-class RegForm(forms.ModelForm):
-    class Meta:
-        model = MyUser
-        fields = (
-            'username','headimage','userEmail','password'
-        )
+class RegForm(forms.Form):
+    # class Meta:
+    #     model = MyUser
+    #     fields = (
+    #         'username','userEmail','password','headimage'
+    #     )
 
-    def clean_username(self):
-        regex = r'\w{4,8}'
-        if re.findall(regex, self.cleaned_data["username"]) is None:
-            raise forms.ValidationError('输入格式不正确')
-        return self.cleaned_data["username"]
-
-    def clean_my_file(self):
-        return self.cleaned_data['my_file']
+    username = forms.CharField(label='用户名', max_length=30)
+    userEmail = forms.EmailField(label='邮箱')
+    userPassword1 = forms.CharField(label='密码',max_length=20,min_length=5)
+    userPassword2 = forms.CharField(label='重复密码',max_length=20,min_length=5)
+    headimage = forms.FileField(label='头像')
+    # def clean_username(self):
+    #     regex = r'\w{4,8}'
+    #     if re.findall(regex, self.cleaned_data["username"]) is None:
+    #         raise forms.ValidationError('输入格式不正确')
+    #     return self.cleaned_data["username"]
+    #
+    # def clean_my_file(self):
+    #     return self.cleaned_data['headimage']

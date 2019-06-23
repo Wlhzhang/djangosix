@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
+    'polls',
+    'xiaoque'
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_login.wsgi.application'
 
 SESSION_ENGINE="django.contrib.sessions.backends.file"
-SESSION_FILE_PATH="C:\session"
+SESSION_FILE_PATH="E:\session"
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

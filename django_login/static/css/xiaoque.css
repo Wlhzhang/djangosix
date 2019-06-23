@@ -1,0 +1,172 @@
+
+.rightCon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ede1dc;
+}
+
+.setTaskTable {
+    position: fixed;
+    top: 300px;
+    text-align: center;
+}
+
+.setTaskTable th {
+    background-color: #ffdca9;
+    border: none;
+    width: 230px;
+}
+
+.setTaskTable td {
+    border: 1px dashed #ffdca9;
+    border-bottom: none;
+    border-top: none;
+}
+
+.setTaskTable tr:hover {
+    background-color: #ffdca9;
+}
+
+.rightOneLine {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
+
+.rightOneLine input {
+    width: 180px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #FF9900;
+}
+
+.rightOneLine select {
+    width: 180px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid #FF9900;
+}
+
+.rightTwoLine {
+    position: fixed;
+    top: 150px;
+    left: 50px;
+}
+
+.rightTwoLine input {
+    width: 180px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #FF9900;
+}
+
+.rightThreeLine {
+    position: fixed;
+    top: 200px;
+    left: 150px;
+}
+
+.rightThreeLine input {
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    margin-right: 200px;
+}
+
+.addForm {
+    display: block;
+    position: relative;
+    left: calc(50% - 300px);
+    top: calc(50% - 400px);
+    background-color: #e5ead0;
+    border-radius: 10px;
+    height: 820px;
+    width: 700px;
+}
+
+.addForm ul {
+    list-style: none;
+}
+
+.addForm li {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.addForm input {
+    display: inline-block;
+    margin-left: 20px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.addForm select {
+    height: 30px;
+    width: 504px;
+    margin-left: 4px;
+}
+
+.addPage {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(153, 173, 155, 0.5);
+}
+
+.addHead span {
+    position: fixed;
+    margin-left: 500px;
+
+}
+
+label.error {
+    color: red;
+}
+
+.m-box > a, .m-box > span {
+    padding: 0 10px;
+    border: 1px solid;
+    margin: 5px;
+    text-decoration: none;
+    color: #bdbdbd;
+}
+
+.m-box > a:hover, .m-box > span:hover {
+    background-color: #4d99bf;
+}
+
+#box {
+    display: flex;
+    margin: 20px 0 40px 0;
+    position: fixed;
+    right: 0;
+}
+
+#box span {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background: rgb(74, 228, 233);
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box;
+    padding-bottom: 3px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+#box span:hover {
+    background: rgb(187, 229, 241);
+}
+
+#box span.active {
+    background: #ccc
+}

@@ -27,7 +27,7 @@ def handle_uploaded_file(f):
     with open(os.path.join(settings.MEDIA_ROOT,f.name),'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
-
+# 注册
 class Register(View):
     def get(self,request,*args,**kwargs):
         return render(request,'register.html')
@@ -38,16 +38,17 @@ class Register(View):
             password1 = form.cleaned_data['userPassword1']
             password2 = form.cleaned_data['userPassword2']
             if password1==password2:
-                form_file = User(
-                                headimage=form.cleaned_data['my_file'],username=form.cleaned_data['userName'],
+                form_file = MyUser(
+                                headimage=form.cleaned_data['userEmail'],username=form.cleaned_data['username'],
                                 password=password1,userEmail=form.cleaned_data['userEmail'])
                 form_file.save()
+
                 return render(request,'login.html')
             else:
                 return JsonResponse({'status':'fail_one','msg':'密码输入不一致'})
         else:
-            return JsonResponse({'status': 'fail', 'msg': form.errors.as_json()})
-
+            return JsonResponse({'status': 'fail', 'msg':'输入有误'})
+# 登陆
 def login(request):
     forms = UserForm(request.POST)
     code = request.POST.get('cache_code',None)

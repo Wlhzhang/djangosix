@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 
 from django.urls import path, re_path, include
-from django_login.views import first,login
-
+from django_login.views import first, login, get_home
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     re_path('^$',first,name='first_page'),
     path('polls/', include(('polls.urls', 'polls'), namespace='polls')),
+    path('xiaoque/', include(('xiaoque.urls', 'xiaoque'), namespace='xiaoque')),
     re_path(r'^login/$', login, name='login'),
+    re_path(r'^home/$', get_home, name='home'),
 
 ]
