@@ -17,13 +17,11 @@
             <option value="working">工作中</option>
             <option value="play">休息</option>
         </select>
+         <label> 下发人：<input type="text"></label>
+        <label> 下发时间：<input type="date">-<input type="date"></label>
+        <input style="background-color: #FF9900;width: 80px" type="button" value="查询">
     </div>
     <div class="rightTwoLine">
-        <label> 下发人：<input type="text"></label>
-        <label> 下发时间：<input type="date">-<input type="date"></label>
-    </div>
-    <div class="rightThreeLine">
-        <input style="background-color: #FF9900" type="button" value="查询">
         <input style="background-color: green" id="set_task" type="button" value="制定消缺任务">
     </div>
     <div class="setTaskTable">
@@ -117,7 +115,8 @@
                 contentType: false,
                 success: function (data) {
                     if (data.status == 'success') {
-                        window.location.href = '/xiaoque/get_xiaoque/'
+                        alert('提交成功');
+                        window.location.href = '/home/'
                     }else if (data.status == 'fail') {
                          $('#error').text(data.msg)
                     }
@@ -135,23 +134,22 @@
         $('#close').mousedown(function () {
             $('.addPage').hide()
         });
-         function initPage() {
-             $('.m-box').pagination({
-                 pageCount: 3,
-                 showData: 5,
-                 coping: true,
-                 homePage: '首页',
-                 endPage: '末页',
-                 prevContent: '上页',
-                 nextContent: '下页',
-                 callback: function (api) {
-                     (api.getCurrent(), false)
-                 }
-             });
-         }
+         {#function initPage() {#}
+         {#    $('.m-box').pagination({#}
+         {#        pageCount: 3,#}
+         {#        showData: 5,#}
+         {#        coping: true,#}
+         {#        homePage: '首页',#}
+         {#        endPage: '末页',#}
+         {#        prevContent: '上页',#}
+         {#        nextContent: '下页',#}
+         {#        callback: function (api) {#}
+         {#            (api.getCurrent(), false)#}
+         {#        }#}
+         {#    });#}
+
      })
 </script>
     <script src="/static/js/fenye/page.js"></script>
-
 </body>
 </html>

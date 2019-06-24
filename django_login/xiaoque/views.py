@@ -37,11 +37,28 @@ def addxiaoque(request):
 # 分页模型
 def dis_xiaoque(request):
     #模型分页
+
+    # 获取数据库所有数据
+    xiaoque_list=AddTask.objects.all()
+    # 构建分页器对象，xiaoque_list=所有数据，5=每页显示数据条数
+    paginator = Paginator(xiaoque_list,5)
+    # 获取具体第几页的页面对象
+    page = paginator.get_page(1)
+    # 数据对象总数
+    count = paginator.count
+
+    # Paginator和Page的常用API
+    # page.previous_page_number()
+    # page.next_page_number()
+    # page.has_previous()
+    # page.has_next()
+
     result={
         'data':['123'],
         'total':5,
+        'page':page,
+
     }
-    # xiaoque_list=AddTask.objects.all()
     # pageSize = int(request.GET.get('pageSize', '5'))
     # paginator = Paginator(xiaoque_list, pageSize)
     # page = request.GET.get('page',1)

@@ -1,8 +1,8 @@
 
 .rightCon {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 80px;
+    left: 220px;
     bottom: 0;
     right: 0;
     background-color: #ede1dc;
@@ -32,8 +32,8 @@
 
 .rightOneLine {
     position: fixed;
-    top: 50px;
-    left: 50px;
+    top: 150px;
+    left: 270px;
 }
 
 .rightOneLine input {
@@ -49,27 +49,13 @@
     border-radius: 3px;
     border: 1px solid #FF9900;
 }
-
 .rightTwoLine {
     position: fixed;
-    top: 150px;
-    left: 50px;
+    top: 228px;
+    left: 355px;
 }
 
 .rightTwoLine input {
-    width: 180px;
-    height: 28px;
-    border-radius: 3px;
-    border: 1px solid #FF9900;
-}
-
-.rightThreeLine {
-    position: fixed;
-    top: 200px;
-    left: 150px;
-}
-
-.rightThreeLine input {
     height: 35px;
     border-radius: 3px;
     border: none;

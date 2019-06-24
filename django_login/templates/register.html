@@ -33,6 +33,7 @@
                 } else if (data.status == 'fail') {
                     $('#error_one').text(data.msg)
                 } else if (data.status == 'success') {
+                    alert('注册成功，去登陆');
                     window.location.href = '/login/';
                 }
             }

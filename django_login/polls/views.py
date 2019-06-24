@@ -39,11 +39,11 @@ class Register(View):
             password2 = form.cleaned_data['userPassword2']
             if password1==password2:
                 form_file = MyUser(
-                                headimage=form.cleaned_data['userEmail'],username=form.cleaned_data['username'],
-                                password=password1,userEmail=form.cleaned_data['userEmail'])
+                                headimage=form.cleaned_data['headimage'],username=form.cleaned_data['username'],userEmail=form.cleaned_data['userEmail'])
+                form_file.set_password(password1)
                 form_file.save()
-
-                return render(request,'login.html')
+                return JsonResponse({'status': 'success'})
+                # return render(request,'login.html')
             else:
                 return JsonResponse({'status':'fail_one','msg':'密码输入不一致'})
         else:

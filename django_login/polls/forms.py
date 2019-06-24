@@ -31,11 +31,11 @@ class RegForm(forms.Form):
     userPassword1 = forms.CharField(label='密码',max_length=20,min_length=5)
     userPassword2 = forms.CharField(label='重复密码',max_length=20,min_length=5)
     headimage = forms.FileField(label='头像')
-    # def clean_username(self):
-    #     regex = r'\w{4,8}'
-    #     if re.findall(regex, self.cleaned_data["username"]) is None:
-    #         raise forms.ValidationError('输入格式不正确')
-    #     return self.cleaned_data["username"]
-    #
-    # def clean_my_file(self):
-    #     return self.cleaned_data['headimage']
+    def clean_username(self):
+        regex = r'\w{4,8}'
+        if re.findall(regex, self.cleaned_data["username"]) is None:
+            raise forms.ValidationError('输入格式不正确')
+        return self.cleaned_data["username"]
+
+    def clean_my_file(self):
+        return self.cleaned_data['headimage']
